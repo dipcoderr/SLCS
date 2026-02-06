@@ -86,22 +86,21 @@ const getAllComplaints = asyncHandler(async (req, res) => {
 
 const getAdminComplaints = asyncHandler(async (req, res) => {
   const { area, centre, division } = req.query;
-  console.log("Admin complaints query:", { area, centre, division });
   
   if (!area || !centre || !division) {
-    throw new ApiError(400, "Please provide all the required fields");
+    return new ApiError(400, "Please provide all the required fields");
   }
 
-  // Use case-insensitive regex matching for better flexibility
   const complaints = await Complaint.find({
-    area: { $regex: new RegExp(`^${area}$`, 'i') },
-    complainCentre: { $regex: new RegExp(`^${centre}$`, 'i') },
-    division: { $regex: new RegExp(`^${division}$`, 'i') },
+    area,
+    complainCentre: centre,
+    division,
   }).sort({ createdAt: -1 });
-  
-  console.log("Found complaints:", complaints.length);
+  if (!complaints) {
+    throw new ApiError(404, "Complaints not found!");
+  }
   return res.status(200).json(new ApiResponse(200, complaints, "Complaints found!"));
-});
+})
 
 const getComplaintWithId = asyncHandler(async (req, res) => {
   const { complaintId } = req.params;
@@ -127,6 +126,16 @@ const putComplaintWithId = asyncHandler(async (req, res) => {
     throw new ApiError(404, "Complaint not found!");
   }
   return res.status(200).json(new ApiResponse(200, complaint, "Complaint updated!"));
+})
+
+const deleteComplaintWithId = asyncHandler(async (req, res) => {
+  const { complaintId } = req.params;
+
+  const complaint = await Complaint.findByIdAndDelete(complaintId);
+  if (!complaint) {
+    throw new ApiError(404, "Complaint not found!");
+  }
+  return res.status(200).json(new ApiResponse(200, {}, "Complaint deleted successfully!"));
 })
 
 
@@ -175,6 +184,7 @@ export {
   getAdminComplaints,
   getComplaintWithId,
   putComplaintWithId,
+  deleteComplaintWithId,
   allAreas,
   getCenter,
   getDivision,

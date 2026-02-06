@@ -12,6 +12,7 @@ import {
   getComplaintWithId,
   getAdminComplaints,
   putComplaintWithId,
+  deleteComplaintWithId,
 } from "../controllers/complaintController.js";
 
 router.post("/create", createComplaint);
@@ -24,6 +25,7 @@ router.get("/", getAllComplaints);
 
 router.get("/:complaintId", getComplaintWithId);
 router.put("/:complaintId", putComplaintWithId);
+router.delete("/:complaintId", deleteComplaintWithId);
 
 router.get("/allarea/:area", allAreas);
 
