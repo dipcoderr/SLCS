@@ -1,32 +1,42 @@
-🌃 Street Light Complaint Management System (SLCS)
-A production-ready civic issue portal connecting citizens with municipal authorities.
+# 🚦 Street Light Complaint Management System (SLCS)
 
-Bridging the gap between public grievances and administrative action through secure, role-based workflows.
+> **Empowering citizens, streamlining administration.**
+> A modern, full-stack solution for smarter civic infrastructure management.
 
-🚀 View Live Demo · 🐛 Report Bug · 📜 Request Feature
+**[🚀 View Live Demo](https://www.google.com/search?q=http://localhost:5173)** · **[🐛 Report Bug](https://www.google.com/search?q=https://github.com/yourusername/repo/issues)** · **[✨ Request Feature](https://www.google.com/search?q=https://github.com/yourusername/repo/issues)**
 
-🧐 What is SLCS?
-This isn't just a CRUD app; it's a Role-Based Civic Management System. The SLCS solves a real-world problem: reporting broken infrastructure. It allows citizens to lodge complaints with visual proof (images) and location data, while giving authorities a dedicated dashboard to manage and resolve these issues.
+---
 
-It enforces strict Role-Based Access Control (RBAC)—ensuring that admins and users exist in completely separate digital jurisdictions.
+## 🧐 Overview
 
-⚡ Key Features
-🛡️ Fortified Security & Auth
-JWT Authentication: Stateless, secure session management.
+The **Street Light Complaint Management System** is more than just a reporting tool—it's a digital bridge between the public and municipal authorities.
 
-Strict RBAC: Middleware barriers ensure Users cannot touch Admin APIs, and Admins cannot tamper with User profiles.
+Built with performance in mind using **Vite** and **Redux**, it allows citizens to securely report malfunctions with **digital signatures** and **visual proof**. Simultaneously, it equips administrators with a powerful dashboard to track, filter, and resolve issues within their specific jurisdictions.
 
-Password Hashing: Industry-standard encryption for user data.
+---
 
-📸 Media & Cloud Handling
-Cloudinary Integration: Images are optimized and stored in the cloud, not the server.
+## 🌟 Key Features
 
-Multer Middleware: robust file handling for incoming media streams.
+### 🏛️ For Citizens (User)
 
-🏗️ Enterprise-Grade Architecture
-MVC Pattern: Clean separation of concerns (Routes → Controllers → Services → Models).
+* **🔐 Military-Grade Auth:** Secure registration and login powered by **JWT**.
+* **📝 Smart Reporting:** Submit complaints with granular details:
+* **Location:** Precise area mapping.
+* **Evidence:** Image upload support (powered by **Firebase**).
+* **Verification:** **Digital signature** support for authenticity.
 
-Scalable Database: Normalized MongoDB schema with clear relationships between Users, Admins, and Complaints.
+
+* **👀 Real-Time Tracking:** Watch your complaint move from `Pending` → `Approved` → `Resolved` instantly.
+* **📂 History:** A personal archive of all your reported issues.
+
+### 👮‍♂️ For Authorities (Admin)
+
+* **🛡️ Area-Based Control:** Strict access control ensures admins only manage complaints in their assigned jurisdiction.
+* **💬 Remarks System:** Add internal notes, rejection reasons, or resolution details to any ticket.
+* **📊 Master Dashboard:** Advanced filtering by **Date**, **Status**, or **Area** to identify high-priority zones.
+* **✅ Workflow Management:** One-click approval or denial mechanisms.
+
+---
 
 ## 🛠️ The Tech Ecosystem
 
