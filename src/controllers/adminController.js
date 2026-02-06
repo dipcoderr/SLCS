@@ -29,7 +29,7 @@ const login = asyncHandler(async (req, res) => {
     .cookie("token", token, { httpOnly: true, secure: true })
     .json(
       new ApiResponse(
-        true,
+        200,
         { token, user: loggedInUser },
         "Admin login successful!"
       )
@@ -46,7 +46,6 @@ const register = asyncHandler(async (req, res) => {
     centre,
     division,
     centrePhone,
-    adminSecret,
   } = req.body;
   if (
     !name ||
@@ -56,17 +55,10 @@ const register = asyncHandler(async (req, res) => {
     !area ||
     !centre ||
     !division ||
-    !centrePhone ||
-    !adminSecret
+    !centrePhone
   ) {
     throw new ApiError(400, "Please provide all the required fields");
   }
-
-  // Verify admin secret key
-  if (adminSecret !== process.env.ADMIN_SECRET_KEY) {
-    throw new ApiError(403, "Invalid admin secret key. You are not authorized to register as admin.");
-  }
-
   console.log("body: ", req.body);
 
   const user = await Admin.findOne({ email });
@@ -94,9 +86,9 @@ const register = asyncHandler(async (req, res) => {
     .cookie("token", token, { httpOnly: true, secure: true })
     .json(
       new ApiResponse(
-        true,
+        201,
         { token, user: loggedInUser },
-        "Registration successful!"
+        "Admin registration successful!"
       )
     );
 });
@@ -106,7 +98,7 @@ const logout = asyncHandler(async (req, res) => {
     return res
       .status(200)
       .clearCookie("token", { httpOnly: true, secure: true })
-      .json(new ApiResponse(true, {}, "Logout successful!"));
+      .json(new ApiResponse(200, {}, "Logout successful!"));
   } catch (err) {
     throw new ApiError(500, "Logout failed");
   }
@@ -118,7 +110,7 @@ const profile = asyncHandler(async (req, res) => {
   if (!token) {
     return res
       .status(401)
-      .json(new ApiResponse(false, {}, "Please login to access this route"));
+      .json(new ApiResponse(401, {}, "Please login to access this route"));
   }
 
   const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
