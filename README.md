@@ -2,9 +2,6 @@
 
 > **Empowering citizens, streamlining administration.**
 > A modern, full-stack solution for smarter civic infrastructure management.
-
-**[🚀 View Live Demo](https://www.google.com/search?q=http://localhost:5173)** · **[🐛 Report Bug](https://www.google.com/search?q=https://github.com/yourusername/street-light-complaint-system/issues)** · **[✨ Request Feature](https://www.google.com/search?q=https://github.com/yourusername/street-light-complaint-system/issues)**
-
 ---
 
 ## 🧐 What is SLCS?
