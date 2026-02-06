@@ -1,40 +1,37 @@
-# 🚦 Street Light Complaint Management System (SLCS)
+# 🌃 Street Light Complaint Management System (SLCS)
 
 > **Empowering citizens, streamlining administration.**
 > A modern, full-stack solution for smarter civic infrastructure management.
 
-**[🚀 View Live Demo](https://www.google.com/search?q=http://localhost:5173)** · **[🐛 Report Bug](https://www.google.com/search?q=https://github.com/yourusername/repo/issues)** · **[✨ Request Feature](https://www.google.com/search?q=https://github.com/yourusername/repo/issues)**
+**[🚀 View Live Demo](https://www.google.com/search?q=http://localhost:5173)** · **[🐛 Report Bug](https://www.google.com/search?q=https://github.com/yourusername/street-light-complaint-system/issues)** · **[✨ Request Feature](https://www.google.com/search?q=https://github.com/yourusername/street-light-complaint-system/issues)**
 
 ---
 
-## 🧐 Overview
+## 🧐 What is SLCS?
 
-The **Street Light Complaint Management System** is more than just a reporting tool—it's a digital bridge between the public and municipal authorities.
+This isn't just a CRUD app; it's a **Role-Based Civic Management System**. The SLCS solves a real-world problem: reporting broken infrastructure. It allows citizens to lodge complaints with visual proof (images) and location data, while giving authorities a dedicated dashboard to manage and resolve these issues.
 
-Built with performance in mind using **Vite** and **Redux**, it allows citizens to securely report malfunctions with **digital signatures** and **visual proof**. Simultaneously, it equips administrators with a powerful dashboard to track, filter, and resolve issues within their specific jurisdictions.
+It enforces strict **Role-Based Access Control (RBAC)**—ensuring that admins and users exist in completely separate digital jurisdictions.
 
 ---
 
-## 🌟 Key Features
+## ⚡ Key Features
 
-### 🏛️ For Citizens (User)
+### 🛡️ Fortified Security & Auth
 
-* **🔐 Military-Grade Auth:** Secure registration and login powered by **JWT**.
-* **📝 Smart Reporting:** Submit complaints with granular details:
-* **Location:** Precise area mapping.
-* **Evidence:** Image upload support (powered by **Firebase**).
-* **Verification:** **Digital signature** support for authenticity.
+* **JWT Authentication:** Stateless, secure session management.
+* **Strict RBAC:** Middleware barriers ensure Users cannot touch Admin APIs, and Admins cannot tamper with User profiles.
+* **Password Hashing:** Industry-standard encryption for user data.
 
+### 📸 Media & Cloud Handling
 
-* **👀 Real-Time Tracking:** Watch your complaint move from `Pending` → `Approved` → `Resolved` instantly.
-* **📂 History:** A personal archive of all your reported issues.
+* **Firebase Storage:** Images are optimized and stored securely in the cloud, ensuring fast retrieval and low server load.
+* **Multer Middleware:** Robust file handling for incoming media streams before upload.
 
-### 👮‍♂️ For Authorities (Admin)
+### 🏗️ Enterprise-Grade Architecture
 
-* **🛡️ Area-Based Control:** Strict access control ensures admins only manage complaints in their assigned jurisdiction.
-* **💬 Remarks System:** Add internal notes, rejection reasons, or resolution details to any ticket.
-* **📊 Master Dashboard:** Advanced filtering by **Date**, **Status**, or **Area** to identify high-priority zones.
-* **✅ Workflow Management:** One-click approval or denial mechanisms.
+* **MVC Pattern:** Clean separation of concerns (Routes → Controllers → Services → Models).
+* **Scalable Database:** Normalized MongoDB schema with clear relationships between Users, Admins, and Complaints.
 
 ---
 
