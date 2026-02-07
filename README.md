@@ -1,142 +1,266 @@
-# 🌃 Street Light Complaint Management System (SLCS)
+<div align="center">
 
-> **Empowering citizens, streamlining administration.**
-> A modern, full-stack solution for smarter civic infrastructure management.
----
+# 🚨 Complaint Management System
 
-## 🧐 What is SLCS?
+### *Streamline Infrastructure Complaint Handling*
 
-This isn't just a CRUD app; it's a **Role-Based Civic Management System**. The SLCS solves a real-world problem: reporting broken infrastructure. It allows citizens to lodge complaints with visual proof (images) and location data, while giving authorities a dedicated dashboard to manage and resolve these issues.
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-It enforces strict **Role-Based Access Control (RBAC)**—ensuring that admins and users exist in completely separate digital jurisdictions.
+A modern, full-stack web application for managing street light and infrastructure complaints. Users can submit complaints with images and signatures, while administrators can review and approve them efficiently.
 
----
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [API Documentation](#-api-endpoints)
 
-## ⚡ Key Features
-
-### 🛡️ Fortified Security & Auth
-
-* **JWT Authentication:** Stateless, secure session management.
-* **Strict RBAC:** Middleware barriers ensure Users cannot touch Admin APIs, and Admins cannot tamper with User profiles.
-* **Password Hashing:** Industry-standard encryption for user data.
-
-### 📸 Media & Cloud Handling
-
-* **Firebase Storage:** Images are optimized and stored securely in the cloud, ensuring fast retrieval and low server load.
-* **Multer Middleware:** Robust file handling for incoming media streams before upload.
-
-### 🏗️ Enterprise-Grade Architecture
-
-* **MVC Pattern:** Clean separation of concerns (Routes → Controllers → Services → Models).
-* **Scalable Database:** Normalized MongoDB schema with clear relationships between Users, Admins, and Complaints.
+</div>
 
 ---
 
-## 🛠️ The Tech Ecosystem
+## ✨ Features
 
-We chose a high-performance stack to ensure speed, scalability, and developer experience.
+<table>
+<tr>
+<td width="50%">
 
-### **Frontend (Client)**
+### 👤 User Features
+- 🔐 **Secure Authentication** - Register and login with JWT
+- 📝 **Submit Complaints** - Detailed forms with location, fault type
+- 📸 **Image Upload** - Attach photos via Firebase storage
+- ✍️ **Digital Signature** - Sign complaints electronically
+- 📊 **Track Status** - Monitor complaint progress in real-time
+- 👨‍💼 **Profile Management** - Update personal information
 
-| Tech | Badge | Why? |
-| --- | --- | --- |
-| **React** |  | Component-based UI |
-| **Vite** |  | Lightning fast build tool |
-| **Redux** |  | Global state management |
-| **Tailwind** |  | Modern utility-first styling |
+</td>
+<td width="50%">
 
-### **Backend (Server)**
+### 🛡️ Admin Features
+- 🔑 **Admin Portal** - Separate authentication system
+- 📋 **Complaint Dashboard** - View all submitted complaints
+- ✅ **Approve/Reject** - Process complaints with remarks
+- 📈 **Status Tracking** - Monitor complaint lifecycle
+- 💬 **Add Remarks** - Provide feedback to users
+- 🔍 **Detailed View** - Access complete complaint information
 
-| Tech | Badge | Why? |
-| --- | --- | --- |
-| **Node.js** |  | Scalable runtime |
-| **Express** |  | Robust API framework |
-| **MongoDB** |  | Flexible NoSQL database |
-| **JWT** |  | Stateless authentication |
+</td>
+</tr>
+</table>
 
-### **Cloud & Tools**
+## 🛠️ Tech Stack
 
----
+<div align="center">
 
-## 📐 System Architecture
+### Frontend
+| Technology | Purpose |
+|------------|---------|
+| ⚛️ **React 18** | UI library |
+| ⚡ **Vite** | Build tool and dev server |
+| 🧭 **React Router** | Client-side routing |
+| 🗃️ **Redux Toolkit** | State management |
+| 🎨 **Tailwind CSS** | Utility-first styling |
+| 🌐 **Axios** | HTTP client |
+| 🔥 **Firebase** | Image storage |
+| 🎯 **Lucide React** | Modern icon library |
+| ✍️ **React Signature Canvas** | Digital signatures |
 
-The application follows a **Decoupled Monolithic** architecture:
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| 🟢 **Node.js** | Runtime environment |
+| 🚂 **Express** | Web framework |
+| 🍃 **MongoDB** | NoSQL database |
+| 🦫 **Mongoose** | MongoDB ODM |
+| 🔐 **JWT** | Token-based authentication |
+| 🔒 **bcrypt** | Password hashing |
+| 🔄 **Nodemon** | Development auto-reload |
+| 🌍 **CORS** | Cross-origin resource sharing |
 
-1. **Client:** React (Vite) consumes RESTful APIs.
-2. **Server:** Express.js handles business logic, validation, and remarks.
-3. **Database:** MongoDB stores users, admins, and complaint documents.
-4. **Storage:** Firebase handles heavy media assets (complaint images).
+</div>
 
----
+## 📋 Prerequisites
 
-## ⚡ Getting Started
+Before you begin, ensure you have the following installed:
 
-### Prerequisites
+- ![Node.js](https://img.shields.io/badge/Node.js-v14+-339933?style=flat-square&logo=node.js) Node.js (v14 or higher)
+- ![MongoDB](https://img.shields.io/badge/MongoDB-Latest-47A248?style=flat-square&logo=mongodb) MongoDB (running locally or remote connection)
+- ![npm](https://img.shields.io/badge/npm-or%20yarn-CB3837?style=flat-square&logo=npm) npm or yarn package manager
 
-* Node.js (v14+)
-* MongoDB (Local or Atlas)
+## 🚀 Installation
 
-### 1. Clone & Install
-
+### 1. 📥 Clone the repository
 ```bash
-git clone https://github.com/yourusername/street-light-complaint-system.git
-cd street-light-complaint-system
-
+git clone <repository-url>
+cd <project-directory>
 ```
 
-### 2. Backend Setup
+### 2. 🔧 Backend Setup
 
 ```bash
 cd backend
 npm install
-# Create .env file with MONGODB_URL and JWT_SECRET
-npm start
-
 ```
 
-### 3. Frontend Setup
+Create a `.env` file in the `backend` directory:
+```env
+MONGODB_URL=mongodb://localhost:27017
+JWT_SECRET=your_jwt_secret_key
+PORT=5000
+```
+
+### 3. 🎨 Frontend Setup
 
 ```bash
 cd frontend
 npm install
-# Create .env with VITE_FIREBASE_ config
-npm run dev
-
 ```
 
----
+Configure Firebase in `frontend/services/firebaseConfig.js` with your Firebase credentials.
 
-## 🛣️ API Roadmap
+## ▶️ Running the Application
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| `POST` | `/api/v1/auth/register` | User Registration |
-| `POST` | `/api/v1/complaints` | Submit Complaint (w/ Image) |
-| `PUT` | `/api/v1/complaints/:id` | **Admin:** Update Status/Remarks |
-| `GET` | `/api/v1/users/profile` | **User:** Get Profile & History |
+### 🍃 Start MongoDB
+Make sure MongoDB is running on your system:
+```bash
+# macOS (if installed via Homebrew)
+brew services start mongodb-community
 
----
+# Linux
+sudo systemctl start mongod
+
+# Windows
+net start MongoDB
+```
+
+### 🚀 Start Backend Server
+```bash
+cd backend
+npm start
+```
+Backend will run on `http://localhost:5000`
+
+### 🎨 Start Frontend Development Server
+```bash
+cd frontend
+npm run dev
+```
+Frontend will run on `http://localhost:5173`
+
+## 📡 API Endpoints
+
+### 🔐 Authentication
+- `POST /api/v1/users/register` - User registration
+- `POST /api/v1/users/login` - User login
+- `POST /api/v1/users/logout` - User logout
+
+### 🛡️ Admin
+- `POST /api/v1/admin/register` - Admin registration
+- `POST /api/v1/admin/login` - Admin login
+- `GET /api/v1/admin/complaints` - Get all complaints (admin only)
+
+### 📝 Complaints
+- `POST /api/v1/complaints/new` - Create new complaint
+- `GET /api/v1/complaints` - Get user's complaints
+- `GET /api/v1/complaints/:id` - Get complaint details
+- `PUT /api/v1/complaints/:id` - Update complaint status (admin)
+
+## 📁 Project Structure
+
+```
+.
+├── backend/
+│   ├── src/
+│   │   ├── controllers/     # Request handlers
+│   │   ├── models/          # Database models
+│   │   ├── routes/          # API routes
+│   │   ├── middlewares/     # Auth & validation
+│   │   ├── utils/           # Helper functions
+│   │   ├── db/              # Database connection
+│   │   ├── app.js           # Express app setup
+│   │   └── index.js         # Server entry point
+│   ├── .env                 # Environment variables
+│   └── package.json
+│
+└── frontend/
+    ├── src/
+    │   ├── components/      # Reusable components
+    │   ├── pages/           # Page components
+    │   ├── services/        # Redux store
+    │   ├── App.jsx          # Main app component
+    │   └── main.jsx         # Entry point
+    ├── public/              # Static assets
+    └── package.json
+```
+
+## 📜 Available Scripts
+
+### Backend 🔧
+- `npm start` - Start server with nodemon
+
+### Frontend
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🔐 Environment Variables
+
+### Backend (.env)
+```env
+MONGODB_URL=mongodb://localhost:27017
+JWT_SECRET=your_secret_key
+PORT=5000
+```
+
+### 🔥 Frontend
+Configure Firebase credentials in `frontend/services/firebaseConfig.js`
+
+## 🗄️ Database Models
+
+### 👤 User
+- name, username, password (hashed), phoneNo
+- Timestamps: createdAt, updatedAt
+
+### 🛡️ Admin
+- name, username, password (hashed), phoneNo
+- Timestamps: createdAt, updatedAt
+
+### 📋 Complaint
+- callerName, callerPhone, callerAddress
+- area, division, category, typeOfFault
+- complainCentre, complainCentrePhone
+- location, picture, signature, remarks
+- status (pending/approved/rejected)
+- approvedBy, approverRemarks
+- Timestamps: createdAt, updatedAt
 
 ## 🤝 Contributing
 
-We welcome contributions!
+We welcome contributions! Here's how you can help:
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
-3. Commit your Changes (`git commit -m 'Add NewFeature'`)
-4. Push to the Branch (`git push origin feature/NewFeature`)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
----
+## 📄 License
+
+This project is licensed under the **ISC License**.
 
 ## 👨‍💻 Author
 
 **Dipanshu Kumar Mishra**
 
-* Designed with ❤️ for better cities.
+## 💬 Support
+
+For issues and questions, please open an issue in the repository.
 
 ---
 
-### 📄 License
+<div align="center">
 
-Distributed under the **ISC License**. See `LICENSE` for more information.
+### ⭐ Star this repository if you find it helpful!
+
+Made with ❤️ by Dipanshu Kumar Mishra
+
+</div>
